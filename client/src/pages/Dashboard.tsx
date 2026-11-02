@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -257,7 +258,7 @@ export default function Dashboard() {
 
         {/* Analysis history cards */}
         <div className="space-y-5">
-          {history.map((historyItem) => {
+          {history.map((historyItem, historyIndex) => {
             const analysis = historyItem.analysis;
 
             const score = Math.min(
@@ -312,7 +313,7 @@ export default function Dashboard() {
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="text-lg font-bold">
-                        Resume #{historyItem.id}
+                        Resume #{historyIndex + 1}
                       </h3>
 
                       <span className="rounded-md border border-[#454545] px-2 py-1 text-[11px] text-[#A8A29E]">
